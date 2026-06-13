@@ -173,7 +173,7 @@ def train_transfer_model(mode="fine_tune", num_epochs=NUM_EPOCHS):
     
     # Learning rate scheduler
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.1, patience=3, verbose=True
+        optimizer, mode='min', factor=0.1, patience=3
     )
     
     # Training history

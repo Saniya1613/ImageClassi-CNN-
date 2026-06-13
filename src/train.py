@@ -198,7 +198,7 @@ def train_model(num_epochs=NUM_EPOCHS, learning_rate=LEARNING_RATE):
     # Reduce LR by 10x when validation loss stops improving for 5 epochs
     # WHY: Start with big steps to learn quickly, then small steps to fine-tune
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.1, patience=5, verbose=True
+        optimizer, mode='min', factor=0.1, patience=5
     )
     
     # Track history for plotting later

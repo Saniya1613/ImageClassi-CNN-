@@ -22,6 +22,8 @@ Visualization is crucial for understanding model behavior:
 
 import torch
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')  # Headless backend
 import matplotlib.pyplot as plt
 
 from src.config import DEVICE, CIFAR10_CLASSES, BEST_MODEL_PATH

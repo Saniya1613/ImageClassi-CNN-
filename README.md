@@ -56,10 +56,39 @@ python main.py --mode evaluate
 python main.py --mode transfer
 ```
 
-### 5. Predict on Your Own Image
+### 5. Predict on Your Own Image (CLI)
 ```bash
 python main.py --mode predict --image path/to/your/image.jpg
 ```
+
+### 6. Run the Interactive Web App (Gradio)
+To run a local web interface for real-time image uploads and classification:
+```bash
+python app.py
+```
+Once started, open `http://127.0.0.1:7860` in your web browser.
+
+## 🌐 Deploying to Hugging Face Spaces
+
+This project is ready to be hosted for free on Hugging Face Spaces:
+
+1. **Create a Space**:
+   - Go to [Hugging Face Spaces](https://huggingface.co/spaces) and click **Create new Space**.
+   - Set the SDK to **Gradio** and select the free CPU basic tier.
+
+2. **Commit Trained Model Weights**:
+   - The model checkpoint `best_model.pt` is gitignored locally. You need to force-add it so it is included in your deployment:
+     ```bash
+     git add -f models/best_model.pt
+     git commit -m "chore: include best_model.pt weights for deployment"
+     ```
+
+3. **Push to Hugging Face**:
+   - Add your Hugging Face Space repository as a remote (replace with your username and Space name):
+     ```bash
+     git remote add hf https://huggingface.co/spaces/YOUR_USERNAME/YOUR_SPACE_NAME
+     git push -f hf main
+     ```
 
 ## 🧪 What You'll Learn
 
